@@ -1,0 +1,168 @@
+/* shop.css */
+
+/* --- Variables (Defaults if not in styles.css) --- */
+:root {
+    --accent-glow: rgba(168, 85, 247, 0.4);
+    --text-primary: #ffffff;
+    --text-secondary: #94a3b8;
+    --accent: #a855f7;
+}
+
+/* --- Layout --- */
+.hero-subtitle {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+.shop-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+/* --- Card Container --- */
+.shop-card {
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Ensure the card is a container for absolute positioned elements */
+    position: relative; 
+    
+    /* Glass Effect Basics (Optional, ensures it looks like glass) */
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border-radius: 1rem;
+    padding: 2rem;
+}
+
+.shop-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 50px var(--accent-glow);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* --- Card Image Area --- */
+.card-image {
+    margin: -2rem -2rem 1.5rem -2rem;
+    border-radius: 1rem 1rem 0 0;
+    overflow: hidden;
+    /* This defines the shape of the image area (landscape rectangle) */
+    aspect-ratio: 16/10; 
+    position: relative;
+    z-index: 1; 
+}
+
+/* --- THE FIX: Image Scaling --- */
+/* This forces your book.jpg and merch.jpg to fit perfectly inside the card-image box */
+.product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crops the image smartly so it doesn't stretch */
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+/* Optional: Slight zoom on hover for a premium feel */
+.shop-card:hover .product-img {
+    transform: scale(1.05);
+}
+
+/* --- Placeholders (Keep these if you ever remove the image) --- */
+.placeholder-image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(236, 72, 153, 0.2));
+    color: var(--text-secondary);
+}
+
+.book-placeholder {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.3), rgba(139, 92, 246, 0.3));
+}
+
+.merch-placeholder {
+    background: linear-gradient(135deg, rgba(236, 72, 153, 0.3), rgba(244, 63, 94, 0.3));
+}
+
+/* --- Content Area --- */
+.card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    
+    /* CRITICAL: Lifts text/buttons above the glow/glass layers */
+    position: relative;
+    z-index: 10;
+}
+
+.card-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+}
+
+.card-content p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    flex: 1;
+}
+
+/* --- Buttons --- */
+.shop-button {
+    background: linear-gradient(135deg, var(--accent), #8b5cf6);
+    color: white;
+    border: none;
+    padding: 0.875rem 1.5rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    
+    /* Extra Safety: Ensure button is clickable */
+    position: relative;
+    z-index: 11;
+}
+
+.shop-button:hover:not(.disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px var(--accent-glow);
+}
+
+.shop-button:active:not(.disabled) {
+    transform: translateY(0);
+}
+
+.shop-button.disabled {
+    background: rgba(255, 255, 255, 0.1);
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* --- Glow Effect Safety --- */
+.card-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Puts it behind everything */
+    pointer-events: none; /* CRITICAL: Lets clicks pass through the glow */
+}
+
+/* --- Mobile --- */
+@media (max-width: 640px) {
+    .shop-grid {
+        grid-template-columns: 1fr;
+    }
+}

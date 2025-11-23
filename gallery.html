@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akhil Baiju - Gallery</title>
+    <link rel="icon" type="image/png" href="Images/ProfileImages/tab.webp" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+    <!-- Animated Background Blobs -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">Akhil Baiju</div>
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="shop.html" class="nav-link">Shop</a>
+                <a href="gallery.html" class="nav-link active">Gallery</a>
+                <a href="ai.html" class="nav-link">AI Prompts</a>
+                <a href="fun.html" class="nav-link">Fun</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <section class="hero">
+                <h1 class="hero-title">Gallery</h1>
+                <p class="hero-subtitle">A collection of moments and creations</p>
+            </section>
+
+            <div class="gallery-grid" id="gallery">
+                <!-- Gallery items will be generated dynamically -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-close" onclick="closeLightbox()">&times;</div>
+        <img src="" alt="" class="lightbox-image" id="lightbox-image">
+        <div class="lightbox-nav">
+            <button class="lightbox-prev" onclick="navigateLightbox(-1)">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+            <button class="lightbox-next" onclick="navigateLightbox(1)">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <script src="gallery.js"></script>
+    <script src="image-protection.js"></script>
+</body>
+</html>

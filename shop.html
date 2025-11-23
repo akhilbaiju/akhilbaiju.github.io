@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akhil Baiju - Shop</title>
+    <link rel="icon" type="image/png" href="Images/ProfileImages/tab.webp" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="shop.css">
+</head>
+<body>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <header class="header">
+        <div class="container">
+            <div class="logo">Akhil Baiju</div>
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="shop.html" class="nav-link active">Shop</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="ai.html" class="nav-link">AI Prompts</a>
+                <a href="fun.html" class="nav-link">Fun</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <section class="hero">
+                <h1 class="hero-title">Shop</h1>
+                <p class="hero-subtitle">Check out my creations</p>
+            </section>
+
+            <div class="shop-grid">
+                
+                <div class="glass-card shop-card">
+                    <div class="card-image">
+                        <img src="Images/ShopImages/book.webp" alt="My Amazon KDP Book" class="product-img">
+                    </div>
+
+                    <div class="card-content">
+                        <h3>Kids Coloring Book</h3>
+                        <p>Embark on a Wildly Colorful Adventure! <br>Author : <i>Mr Akhil Baiju.</i></p>
+                        
+                        <button class="shop-button" onclick="window.open('https://www.amazon.co.uk/dp/B0FTWZVHWP', '_blank')">
+                            View on Amazon
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="card-glow"></div>
+                </div>
+
+                <div class="glass-card shop-card">
+                    <div class="card-image">
+                        <img src="Images/ShopImages/merch.webp" alt="Merch Collection" class="product-img">
+                    </div>
+                    
+                    <div class="card-content">
+                        <h3>Merch Collection</h3>
+                        <p>Cool merchandise coming soon. Stay tuned for updates!</p>
+                        
+                        <button class="shop-button disabled" disabled>
+                            Coming Soon
+                        </button>
+                    </div>
+                    <div class="card-glow"></div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script src="shop.js"></script>
+</body>
+</html>

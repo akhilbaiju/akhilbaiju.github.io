@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akhil Baiju - Game</title>
+    <link rel="icon" type="image/png" href="Images/ProfileImages/tab.webp" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="fun.css">
+</head>
+<body>
+    <!-- Animated Background Blobs -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">Akhil Baiju</div>
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="shop.html" class="nav-link">Shop</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="ai.html" class="nav-link">AI Prompts</a>
+                <a href="fun.html" class="nav-link active">Fun</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <section class="hero">
+                <h1 class="hero-title">Memory Match Game</h1>
+                <p class="hero-subtitle">Find all matching pairs!</p>
+            </section>
+
+            <div class="game-container">
+                <div class="game-stats glass-card">
+                    <div class="stat">
+                        <div class="stat-label">Moves</div>
+                        <div class="stat-value" id="moves">0</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">Matches</div>
+                        <div class="stat-value" id="matches">0 / 8</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">Time</div>
+                        <div class="stat-value" id="timer">0:00</div>
+                    </div>
+                    <button class="reset-button" onclick="resetGame()">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="23 4 23 10 17 10"></polyline>
+                            <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+                        </svg>
+                        New Game
+                    </button>
+                </div>
+
+                <div class="game-board glass-card" id="game-board">
+                    <!-- Cards will be generated dynamically -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Win Modal -->
+    <div class="win-modal" id="win-modal">
+        <div class="win-content glass-card">
+            <div class="win-icon">🎉</div>
+            <h2>Congratulations!</h2>
+            <p>You completed the game!</p>
+            <div class="win-stats">
+                <div class="win-stat">
+                    <div class="win-stat-value" id="final-moves">0</div>
+                    <div class="win-stat-label">Moves</div>
+                </div>
+                <div class="win-stat">
+                    <div class="win-stat-value" id="final-time">0:00</div>
+                    <div class="win-stat-label">Time</div>
+                </div>
+            </div>
+            <button class="play-again-button" onclick="resetGame()">Play Again</button>
+        </div>
+    </div>
+
+    <script src="fun.js"></script>
+    <script src="image-protection.js"></script>
+</body>
+</html>

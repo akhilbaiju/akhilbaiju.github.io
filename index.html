@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akhil Baiju</title>
+    <link rel="icon" type="image/png" href="Images/ProfileImages/tab.webp" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Animated Background Blobs -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">Akhil Baiju</div>
+            <nav class="nav">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="shop.html" class="nav-link">Shop</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="ai.html" class="nav-link">AI Prompts</a>
+                <a href="fun.html" class="nav-link">Fun</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="hero">
+                <h1 class="hero-title">Hi, Glad you landed here!</h1>
+            </section>
+
+            <div class="content-grid">
+                <!-- Left Column: About & Projects -->
+                <div class="left-column">
+                    <!-- About Section -->
+                    <section class="glass-card about-section">
+                        <h2>About</h2>
+                        <div class="about-content">
+                            <img src="Images/ProfileImages/akhil.jpg" alt="Profile" class="profile-photo">
+                            <p>Hey there, I’m Akhil. Rooted in Alappuzha. I believe in appreciating the perfect frame on screen and preserving the green view outside of it. Welcome to my space. Whether you're here for the latest Malayalam movie updates, news, or to copy my Gemini image prompts—dive in. Feel free to play a game, browse the gallery, or shop my books and merch. Look around, stay a while, and enjoy the vibe. Welcome to my corner of the web!</p>
+                        </div>
+                    </section>
+
+                    <!-- Projects Section -->
+                    <section class="projects-section">
+                        <h2>Radio</h2>
+                        
+                                            </section>
+                        
+                                                                <!-- Music Player Section -->
+                                                                <section class="glass-card music-player is-playing" id="musicPlayer">
+                                                                    <div class="music-header">Akhil Now listening to..<span class="glow-dot"></span></div>
+                                                                    <div class="music-content">
+                                                                        <img src="https://images.unsplash.com/photo-1493225255756-d9584f8606e9?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80" 
+                                                                             alt="Album Art" 
+                                                                             class="album-art" 
+                                                                             id="songCover">
+                                                                        <div class="music-info">
+                                                                            <h3 class="song-title" id="songTitle">Loading...</h3>
+                                                                            <p class="song-artist" id="songArtist">Loading...</p>
+                                                                            <div class="progress-container">
+                                                                                <div class="progress-bar" id="progressBar"></div>
+                                                                            </div>
+                                                                            <div class="equalizer">
+                                                                                <div class="bar"></div>
+                                                                                <div class="bar"></div>
+                                                                                <div class="bar"></div>
+                                                                                <div class="bar"></div>
+                                                                                <div class="bar"></div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </section>
+                                            
+                                                                <!-- Visit Section -->
+                                                                <section class="visit-section">
+                                                                    <h2>Extended Universe</h2>
+                                                                    <div class="visit-grid">
+                                                                        <!-- YouTube Card -->
+                                                                        <a href="https://www.youtube.com/@honeybeecreationss" target="_blank" class="glass-card visit-card">
+                                                                            <img src="Images/ExtendeduImages/U1.webp" alt="YouTube" class="visit-card-img">
+                                                                            <div class="visit-card-content">
+                                                                                <h3>YouTube</h3>
+                                                                                <p>Watch my latest videos and tutorials.</p>
+                                                                            </div>
+                                                                        </a>
+                                                                        <!-- Instagram Card -->
+                                                                        <a href="https://www.instagram.com/cinemastrings/" target="_blank" class="glass-card visit-card">
+                                                                            <img src="Images/ExtendeduImages/instagram.webp" alt="Instagram" class="visit-card-img">
+                                                                            <div class="visit-card-content">
+                                                                                <h3>Instagram</h3>
+                                                                                <p>Follow my creative journey and daily snaps.</p>
+                                                                            </div>
+                                                                        </a>
+                                                                        <!-- Blogspot Card -->
+                                                                        <a href="https://cinemastrings.blogspot.com/" target="_blank" class="glass-card visit-card">
+                                                                            <img src="Images/ExtendeduImages/blog.webp" alt="Blogspot" class="visit-card-img">
+                                                                            <div class="visit-card-content">
+                                                                                <h3>Blog</h3>
+                                                                                <p>Read my thoughts on tech and design.</p>
+                                                                            </div>
+                                                                        </a>
+                                                                        
+                                                                    </div>
+                                                                </section>
+
+                                                                <!-- Kerala News Section -->
+                                                                <section class="glass-card" id="kerala-news">
+                                                                    <h2>Top News Headlines of Kerala : <span id="news-date"></span></h2>
+                                                                    <div class="news-list" id="news-list-container">
+                                                                        <!-- News items will be injected here by JavaScript -->
+                                                                    </div>
+                                                                </section>
+                                            
+                                                                <!-- Movies Dashboard Section -->
+                                                                <section class="glass-card" id="movies-dashboard">
+                                                                    <h2>Movies Running near you</h2>
+                                                                    <div class="movies-grid" id="movies-grid-container">
+                                                                        <!-- Movie cards will be injected here by JavaScript -->
+                                                                    </div>
+                                            </section>
+                                                            </div>
+                                            
+                                                            <!-- Right Column: Terminal -->
+                                                            <div class="right-column">
+                                                                <!-- Visiting Card -->
+                                                                <div class="visiting-card-container">
+                                                                    <div class="visiting-card">
+                                                                        <div class="card-front">
+                                                                            <div class="card-front-content">
+                                                                                <img src="https://akhilbaiju.github.io/images/profile-pic2.jpg" alt="Profile" class="card-profile-pic-front">
+                                                                                <h3 class="card-name">Akhil Baiju</h3>
+                                                                                <p class="card-title">Software Quality Engineer</p>
+                                                                                <div class="card-flip-instruction">
+                                                                                    <i class="fas fa-mouse-pointer"></i> Hover / Touch to Flip
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="card-back">
+                                                                            <div class="card-back-content">
+                                                                                <img src="https://akhilbaiju.github.io/images/profile-pic2.jpg" alt="Profile" class="card-profile-pic-back">
+                                                                                <p class="card-company">Akhil Baiju</p>
+                                                                                <p class="card-tagline">Software Quality Engineer</p>
+                                                                                <div class="card-contact-info">
+                                                                                    <p><i class="fas fa-envelope"></i> akhilbaiju00135@gmail.com</p>
+                                                                                    <!--<p><i class="fas fa-globe"></i> akhilbaiju.github.io</p>-->
+                                                                                </div>
+                                                                                <button class="download-btn" id="download-card-btn">
+                                                                                    <i class="fas fa-download"></i> Download vCard
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="glass-card terminal">
+                                                                    <div class="terminal-header">
+                                                                        <div class="terminal-buttons">
+                                                                            <span class="btn-close"></span>
+                                                                            <span class="btn-minimize"></span>
+                                                                            <span class="btn-maximize"></span>
+                                                                        </div>                            <div class="terminal-title">terminal</div>
+                        </div>
+                        <div class="terminal-body" id="terminal-output">
+                            <div class="terminal-line">Welcome! Type 'help' to see available commands.</div>
+                        </div>
+                        <div class="terminal-input-line">
+                            <span class="terminal-prompt">$</span>
+                            <input type="text" class="terminal-input" id="terminal-input">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="https://www.facebook.com/AkhilBaiju007" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/akhilbaiju_" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://in.pinterest.com/akhilbaiju_/" target="_blank" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                <a href="https://github.com/akhilbaiju" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.instagram.com/akhil.baiju_/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://t.me/akhilbaiju" target="_blank"aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+            </div>
+            <div class="footer-text">
+                <p>&copy; 2025 Akhil Baiju. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

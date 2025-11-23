@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akhil Baiju - AI Prompts</title>
+    <link rel="icon" type="image/png" href="Images/ProfileImages/tab.webp" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="ai.css">
+</head>
+<body>
+    <!-- Animated Background Blobs -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">Akhil Baiju</div>
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="shop.html" class="nav-link">Shop</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="ai.html" class="nav-link active">AI Prompts</a>
+                <a href="fun.html" class="nav-link">Fun</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <section class="hero">
+                <h1 class="hero-title">AI Prompts</h1>
+                <p class="hero-subtitle">Click any image to copy its prompt</p>
+            </section>
+
+            <!-- Category Filters -->
+            <div class="category-filters">
+                <button class="filter-btn active" onclick="filterByCategory('All')">All</button>
+                <button class="filter-btn" onclick="filterByCategory('Realistic')">Realistic</button>
+                <button class="filter-btn" onclick="filterByCategory('Cartoon')">Cartoon</button>
+                <button class="filter-btn" onclick="filterByCategory('Cinema')">Cinema</button>
+                <button class="filter-btn" onclick="filterByCategory('Anime')">Anime</button>
+                <button class="filter-btn" onclick="filterByCategory('Digital Painting')">Digital Painting</button>
+                <button class="filter-btn" onclick="filterByCategory('Advertisment')">Advertisment</button>
+            </div>
+
+            <div class="ai-grid" id="ai-grid">
+                <!-- AI prompt images will be generated dynamically -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+        Prompt copied to clipboard!
+    </div>
+
+    <script src="ai.js"></script>
+    <script src="image-protection.js"></script>
+</body>
+</html>
