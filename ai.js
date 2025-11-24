@@ -10,7 +10,7 @@ const aiPrompts = [
         title: "Fantasy Forest",
         image: "imageforprompt2.jpg",  // Your image path
         category: "Cartoon", 
-        prompt: "A Mystical forest with bioluminescent plants, fairy lights, ancient trees, magical atmosphere, fantasy art style, ethereal glow"
+        prompt: "A Mystical Forest with bioluminescent plants, fairy lights, ancient trees, magical atmosphere, fantasy art style, ethereal glow"
     },
     {
         title: "Abstract Geometry",
@@ -132,4 +132,5 @@ function copyPrompt(prompt, card) {
         console.error('Failed to copy:', err);
     });
 }
+
 
