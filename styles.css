@@ -232,7 +232,7 @@ body {
 }
 
 .song-title {
-    font-size: 1.1rem;
+    font-size: 0.81rem;
     margin-bottom: 0.25rem;
     color: var(--text-primary);
     font-weight: 600;
@@ -242,7 +242,7 @@ body {
 }
 
 .song-artist {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: var(--text-secondary);
     margin-bottom: 0.75rem;
     white-space: nowrap;
