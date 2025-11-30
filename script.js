@@ -1,12 +1,12 @@
 // Music Player functionality
 const playlist = [
     {
-        title: "Sunflower - Spiderman into the Spider-Verse",
+        title: "Sunflower - Spiderman..",
         artist: "Postmalone",
         cover: "Images/Songimages/spiderman2.jpg"
     },
     {
-        title: "Dil Diyan Gallan (From \"Tiger Zinda Hai\")",
+        title: "Dil Diyan Gallan",
         artist: "Atif Aslam",
         cover: "Images/Songimages/DilDiyaGallan.webp"
     },
@@ -16,7 +16,7 @@ const playlist = [
         cover: "Images/Songimages/Levitating.webp"
     },
     {
-        title: "Ordinary Person (From 'Leo')",
+        title: "Ordinary Person ('Leo')",
         artist: "Anirudh Ravichander",
         cover: "Images/Songimages/Ordinaryperson.webp"
     },
