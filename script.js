@@ -1,4 +1,4 @@
-90// Music Player functionality
+// Music Player functionality
 const playlist = [
     {
         title: "Sunflower - Spiderman into the Spider-Verse",
@@ -47,9 +47,6 @@ function startProgress() {
     clearInterval(progressInterval);
     
     // Duration: 5 minutes = 300,000ms
-    // Update every 100ms
-    // Total steps = 300,000 / 100 = 3000
-    // Increment per step = 100% / 3000 = 0.03333%
     const durationSteps = (5 * 60 * 1000) / 100;
     const increment = 100 / durationSteps;
     
@@ -104,54 +101,56 @@ const commands = {
     }
 };
 
-terminalInput.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
-        const input = terminalInput.value.trim();
-        
-        if (input) {
-            // Display command
-            const commandLine = document.createElement('div');
-            commandLine.className = 'terminal-line';
-            commandLine.innerHTML = `<span class="terminal-command">$ ${input}</span>`;
-            terminalOutput.appendChild(commandLine);
+if (terminalInput) {
+    terminalInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            const input = terminalInput.value.trim();
             
-            // Execute command
-            const output = commands[input.toLowerCase()];
-            if (output) {
-                const result = output();
-                if (result !== null) {
-                    const outputLine = document.createElement('div');
-                    outputLine.className = 'terminal-line';
-                    outputLine.textContent = result;
-                    terminalOutput.appendChild(outputLine);
+            if (input) {
+                // Display command
+                const commandLine = document.createElement('div');
+                commandLine.className = 'terminal-line';
+                commandLine.innerHTML = `<span class="terminal-command">$ ${input}</span>`;
+                terminalOutput.appendChild(commandLine);
+                
+                // Execute command
+                const output = commands[input.toLowerCase()];
+                if (output) {
+                    const result = output();
+                    if (result !== null) {
+                        const outputLine = document.createElement('div');
+                        outputLine.className = 'terminal-line';
+                        outputLine.textContent = result;
+                        terminalOutput.appendChild(outputLine);
+                    }
+                } else {
+                    const errorLine = document.createElement('div');
+                    errorLine.className = 'terminal-line';
+                    errorLine.textContent = `Command not found: ${input}. Type 'help' for available commands.`;
+                    terminalOutput.appendChild(errorLine);
                 }
-            } else {
-                const errorLine = document.createElement('div');
-                errorLine.className = 'terminal-line';
-                errorLine.textContent = `Command not found: ${input}. Type 'help' for available commands.`;
-                terminalOutput.appendChild(errorLine);
+                
+                // Scroll to bottom
+                terminalOutput.scrollTop = terminalOutput.scrollHeight;
+                
+                // Clear input
+                terminalInput.value = '';
             }
-            
-            // Scroll to bottom
-            terminalOutput.scrollTop = terminalOutput.scrollHeight;
-            
-            // Clear input
-            terminalInput.value = '';
         }
-    }
-});
+    });
 
-// Keep input focused
-document.addEventListener('click', (e) => {
-    // If the click is inside another interactive element, don't steal focus.
-    if (e.target.closest('.visiting-card-container') || e.target.closest('.music-player')) {
-        return;
-    }
+    // Keep input focused
+    document.addEventListener('click', (e) => {
+        // If the click is inside another interactive element, don't steal focus.
+        if (e.target.closest('.visiting-card-container') || e.target.closest('.music-player')) {
+            return;
+        }
 
-    if (document.activeElement !== terminalInput) {
-        terminalInput.focus();
-    }
-});
+        if (document.activeElement !== terminalInput) {
+            terminalInput.focus();
+        }
+    });
+}
 
 // --- Kerala News & Movies Dashboard ---
 
@@ -202,12 +201,14 @@ const renderNews = (items) => {
         dateElement.textContent = dateString;
     }
 
-    newsContainer.innerHTML = items.slice(0, 5).map(item => `
-        <div class="news-item">
-            <i class="${getNewsIcon(item.title)}"></i>
-            <a href="${item.link}" target="_blank" rel="noopener noreferrer">${item.title}</a>
-        </div>
-    `).join('');
+    if (newsContainer) {
+        newsContainer.innerHTML = items.slice(0, 5).map(item => `
+            <div class="news-item">
+                <i class="${getNewsIcon(item.title)}"></i>
+                <a href="${item.link}" target="_blank" rel="noopener noreferrer">${item.title}</a>
+            </div>
+        `).join('');
+    }
 };
 
 const fetchNews = async () => {
@@ -230,14 +231,12 @@ const fetchNews = async () => {
 // --- Movies Logic ---
 
 const getMoviePoster = (description) => {
-    // This regex looks for src='...' or src="..."
     const match = description.match(/src='([^']*)'|src="([^"]*)"/);
-    // The result can be in either capture group 1 or 2
     return match ? (match[1] || match[2]) : 'https://via.placeholder.com/150x220.png?text=No+Image';
 };
 
 const generateStarRating = () => {
-    const rating = (Math.random() * 2 + 3).toFixed(1); // Random rating between 3.0 and 5.0
+    const rating = (Math.random() * 2 + 3).toFixed(1);
     let stars = '';
     for (let i = 0; i < 5; i++) {
         if (i < Math.floor(rating)) {
@@ -252,15 +251,17 @@ const generateStarRating = () => {
 };
 
 const renderMovies = (items) => {
-    moviesContainer.innerHTML = items.slice(0, 5).map(item => `
-        <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="movie-card">
-            <img src="${getMoviePoster(item.description)}" alt="${item.title}">
-            <div class="movie-card-content">
-                <h3>${item.title}</h3>
-                <div class="star-rating">${generateStarRating()}</div>
-            </div>
-        </a>
-    `).join('');
+    if (moviesContainer) {
+        moviesContainer.innerHTML = items.slice(0, 5).map(item => `
+            <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="movie-card">
+                <img src="${getMoviePoster(item.description)}" alt="${item.title}">
+                <div class="movie-card-content">
+                    <h3>${item.title}</h3>
+                    <div class="star-rating">${generateStarRating()}</div>
+                </div>
+            </a>
+        `).join('');
+    }
 };
 
 const fetchMovies = async () => {
@@ -288,46 +289,59 @@ function fetchNewsAndMovies() {
 
 window.addEventListener('DOMContentLoaded', () => {
     fetchNewsAndMovies();
-k
+    
     // --- Visiting Card Download ---
     const downloadBtn = document.getElementById('download-card-btn');
     if (downloadBtn) {
         downloadBtn.addEventListener('click', (e) => {
-            e.stopPropagation(); // Prevent event bubbling that might interfere with hover states
+            e.stopPropagation(); 
+            
+            // Visual feedback that click registered
+            const originalText = downloadBtn.innerHTML;
+            downloadBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
 
             const cardBack = document.querySelector('.card-back');
-            
-            // Create a clone to capture, avoiding issues with CSS transforms
             const clone = cardBack.cloneNode(true);
             
-            // Style the clone to be rendered off-screen
-            clone.style.position = 'absolute';
-            clone.style.left = '-9999px';
-            clone.style.top = '0px';
-            clone.style.transform = 'none'; // Ensure no rotation
-            clone.style.width = `${cardBack.offsetWidth}px`; // Set explicit width
-            clone.style.height = `${cardBack.offsetHeight}px`; // Set explicit height
+            // Fix mirroring issue by resetting transform
+            clone.style.transform = 'none';
+
+            // Hide the download button in the cloned element
+            const cloneDownloadBtn = clone.querySelector('.download-btn');
+            if (cloneDownloadBtn) {
+                cloneDownloadBtn.style.display = 'none';
+            }
+
+            clone.style.position = 'fixed'; 
+            clone.style.left = '-10000px';
+            clone.style.top = '0';
+            clone.style.width = `${cardBack.offsetWidth}px`;
+            clone.style.height = `${cardBack.offsetHeight}px`;
+            
+            // Force opaque background for better visibility in the downloaded image
+            clone.style.background = '#0a0a0f'; 
+            clone.style.borderRadius = '16px';
 
             document.body.appendChild(clone);
 
             html2canvas(clone, {
-                backgroundColor: null, // Transparent background
+                backgroundColor: null,
                 useCORS: true,
-                // Ensure it renders at the correct dimensions
-                width: clone.offsetWidth,
-                height: clone.offsetHeight,
+                allowTaint: true, 
+                scale: 2 // Higher quality
             }).then(canvas => {
                 const link = document.createElement('a');
                 link.download = 'akhil-baiju-vcard.png';
                 link.href = canvas.toDataURL('image/png');
                 link.click();
-
-                // Clean up the clone from the DOM
+                
                 document.body.removeChild(clone);
+                downloadBtn.innerHTML = originalText;
             }).catch(err => {
                 console.error("Error generating card image:", err);
-                // Clean up the clone even if there's an error
+                alert("Could not generate image. Please check console for errors.");
                 document.body.removeChild(clone);
+                downloadBtn.innerHTML = originalText;
             });
         });
     }
