@@ -10,12 +10,10 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Animated Background Blobs -->
     <div class="blob blob-1"></div>
     <div class="blob blob-2"></div>
     <div class="blob blob-3"></div>
 
-    <!-- Header -->
     <header class="header">
         <div class="container">
             <div class="logo">Akhil Baiju</div>
@@ -31,15 +29,12 @@
 
     <main class="main-content">
         <div class="container">
-            <!-- Hero Section -->
             <section class="hero">
                 <h1 class="hero-title">Hi, Glad you landed here!</h1>
             </section>
 
             <div class="content-grid">
-                <!-- Left Column: About & Projects -->
                 <div class="left-column">
-                    <!-- About Section -->
                     <section class="glass-card about-section">
                         <h2>About</h2>
                         <div class="about-content">
@@ -48,124 +43,111 @@
                         </div>
                     </section>
 
-                    <!-- Projects Section -->
                     <section class="projects-section">
                         <h2>Radio</h2>
+                    </section>
                         
-                                            </section>
-                        
-                                                                <!-- Music Player Section -->
-                                                                <section class="glass-card music-player is-playing" id="musicPlayer">
-                                                                    <div class="music-header">Akhil Now listening to..<span class="glow-dot"></span></div>
-                                                                    <div class="music-content">
-                                                                        <img src="https://images.unsplash.com/photo-1493225255756-d9584f8606e9?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80" 
-                                                                             alt="Album Art" 
-                                                                             class="album-art" 
-                                                                             id="songCover">
-                                                                        <div class="music-info">
-                                                                            <h3 class="song-title" id="songTitle">Loading...</h3>
-                                                                            <p class="song-artist" id="songArtist">Loading...</p>
-                                                                            <div class="progress-container">
-                                                                                <div class="progress-bar" id="progressBar"></div>
-                                                                            </div>
-                                                                            <div class="equalizer">
-                                                                                <div class="bar"></div>
-                                                                                <div class="bar"></div>
-                                                                                <div class="bar"></div>
-                                                                                <div class="bar"></div>
-                                                                                <div class="bar"></div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </section>
-                                            
-                                                                <!-- Visit Section -->
-                                                                <section class="visit-section">
-                                                                    <h2>Extended Universe</h2>
-                                                                    <div class="visit-grid">
-                                                                        <!-- YouTube Card -->
-                                                                        <a href="https://www.youtube.com/@honeybeecreationss" target="_blank" class="glass-card visit-card">
-                                                                            <img src="Images/ExtendeduImages/U1.webp" alt="YouTube" class="visit-card-img">
-                                                                            <div class="visit-card-content">
-                                                                                <h3>YouTube</h3>
-                                                                                <p>Watch my latest videos and tutorials.</p>
-                                                                            </div>
-                                                                        </a>
-                                                                        <!-- Instagram Card -->
-                                                                        <a href="https://www.instagram.com/cinemastrings/" target="_blank" class="glass-card visit-card">
-                                                                            <img src="Images/ExtendeduImages/instagram.webp" alt="Instagram" class="visit-card-img">
-                                                                            <div class="visit-card-content">
-                                                                                <h3>Instagram</h3>
-                                                                                <p>Follow my creative journey and daily snaps.</p>
-                                                                            </div>
-                                                                        </a>
-                                                                        <!-- Blogspot Card -->
-                                                                        <a href="https://cinemastrings.blogspot.com/" target="_blank" class="glass-card visit-card">
-                                                                            <img src="Images/ExtendeduImages/blog.webp" alt="Blogspot" class="visit-card-img">
-                                                                            <div class="visit-card-content">
-                                                                                <h3>Blog</h3>
-                                                                                <p>Read my thoughts on tech and design.</p>
-                                                                            </div>
-                                                                        </a>
-                                                                        
-                                                                    </div>
-                                                                </section>
+                    <section class="glass-card music-player is-playing" id="musicPlayer">
+                        <div class="music-header">Akhil Now listening to..<span class="glow-dot"></span></div>
+                        <div class="music-content">
+                            <img src="https://images.unsplash.com/photo-1493225255756-d9584f8606e9?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80" 
+                                 alt="Album Art" 
+                                 class="album-art" 
+                                 id="songCover">
+                            <div class="music-info">
+                                <h3 class="song-title" id="songTitle">Loading...</h3>
+                                <p class="song-artist" id="songArtist">Loading...</p>
+                                <div class="progress-container">
+                                    <div class="progress-bar" id="progressBar"></div>
+                                </div>
+                                <div class="equalizer">
+                                    <div class="bar"></div>
+                                    <div class="bar"></div>
+                                    <div class="bar"></div>
+                                    <div class="bar"></div>
+                                    <div class="bar"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
 
-                                                                <!-- Kerala News Section -->
-                                                                <section class="glass-card" id="kerala-news">
-                                                                    <h2>Top News Headlines of Kerala : <span id="news-date"></span></h2>
-                                                                    <div class="news-list" id="news-list-container">
-                                                                        <!-- News items will be injected here by JavaScript -->
-                                                                    </div>
-                                                                </section>
-                                            
-                                                                <!-- Movies Dashboard Section -->
-                                                                <section class="glass-card" id="movies-dashboard">
-                                                                    <h2>Movies Running near you</h2>
-                                                                    <div class="movies-grid" id="movies-grid-container">
-                                                                        <!-- Movie cards will be injected here by JavaScript -->
-                                                                    </div>
-                                            </section>
-                                                            </div>
-                                            
-                                                            <!-- Right Column: Terminal -->
-                                                            <div class="right-column">
-                                                                <!-- Visiting Card -->
-                                                                <div class="visiting-card-container">
-                                                                    <div class="visiting-card">
-                                                                        <div class="card-front">
-                                                                            <div class="card-front-content">
-                                                                                <img src="https://avatars.githubusercontent.com/u/45595599?v=4" alt="Profile" class="card-profile-pic-front">
-                                                                                <h3 class="card-name">Akhil Baiju</h3>
-                                                                                <p class="card-title">Software Quality Engineer</p>
-                                                                                <div class="card-flip-instruction">
-                                                                                    <i class="fas fa-mouse-pointer"></i> Hover / Touch to Flip
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="card-back">
-                                                                            <div class="card-back-content">
-                                                                                <img src="https://avatars.githubusercontent.com/u/45595599?v=4" alt="Profile" class="card-profile-pic-back">
-                                                                                <p class="card-company">Akhil Baiju</p>
-                                                                                <p class="card-tagline">Software Quality Engineer</p>
-                                                                                <div class="card-contact-info">
-                                                                                    <p><i class="fas fa-envelope"></i> akhilbaiju00135@gmail.com</p>
-                                                                                    <!--<p><i class="fas fa-globe"></i> akhilbaiju.github.io</p>-->
-                                                                                </div>
-                                                                                <button class="download-btn" id="download-card-btn">
-                                                                                    <i class="fas fa-download"></i> Download vCard
-                                                                                </button>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="glass-card terminal">
-                                                                    <div class="terminal-header">
-                                                                        <div class="terminal-buttons">
-                                                                            <span class="btn-close"></span>
-                                                                            <span class="btn-minimize"></span>
-                                                                            <span class="btn-maximize"></span>
-                                                                        </div>                            <div class="terminal-title">terminal</div>
+                    <section class="visit-section">
+                        <h2>Extended Universe</h2>
+                        <div class="visit-grid">
+                            <a href="https://www.youtube.com/@honeybeecreationss" target="_blank" class="glass-card visit-card">
+                                <img src="Images/ExtendeduImages/U1.webp" alt="YouTube" class="visit-card-img">
+                                <div class="visit-card-content">
+                                    <h3>YouTube</h3>
+                                    <p>Watch my latest videos and tutorials.</p>
+                                </div>
+                            </a>
+                            <a href="https://www.instagram.com/cinemastrings/" target="_blank" class="glass-card visit-card">
+                                <img src="Images/ExtendeduImages/instagram.webp" alt="Instagram" class="visit-card-img">
+                                <div class="visit-card-content">
+                                    <h3>Instagram</h3>
+                                    <p>Follow my creative journey and daily snaps.</p>
+                                </div>
+                            </a>
+                            <a href="https://cinemastrings.blogspot.com/" target="_blank" class="glass-card visit-card">
+                                <img src="Images/ExtendeduImages/blog.webp" alt="Blogspot" class="visit-card-img">
+                                <div class="visit-card-content">
+                                    <h3>Blog</h3>
+                                    <p>Read my thoughts on tech and design.</p>
+                                </div>
+                            </a>
+                        </div>
+                    </section>
+
+                    <section class="glass-card" id="kerala-news">
+                        <h2>Top News Headlines of Kerala : <span id="news-date"></span></h2>
+                        <div class="news-list" id="news-list-container">
+                            </div>
+                    </section>
+
+                    <section class="glass-card" id="movies-dashboard">
+                        <h2>Movies Running near you</h2>
+                        <div class="movies-grid" id="movies-grid-container">
+                            </div>
+                    </section>
+                </div>
+
+                <div class="right-column">
+                    <div class="visiting-card-container">
+                        <div class="visiting-card">
+                            <div class="card-front">
+                                <div class="card-front-content">
+                                    <img src="Images/ProfileImages/akhil.jpg" alt="Profile" class="card-profile-pic-front">
+                                    <h3 class="card-name">Akhil Baiju</h3>
+                                    <p class="card-title">Software Quality Engineer</p>
+                                    <div class="card-flip-instruction">
+                                        <i class="fas fa-mouse-pointer"></i> Hover / Touch to Flip
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <div class="card-back-content">
+                                    <img src="Images/ProfileImages/akhil.jpg" alt="Profile" class="card-profile-pic-back">
+                                    <p class="card-company">Akhil Baiju</p>
+                                    <p class="card-tagline">Software Quality Engineer</p>
+                                    <div class="card-contact-info">
+                                        <p><i class="fas fa-envelope"></i> akhilbaiju00135@gmail.com</p>
+                                    </div>
+                                    <button class="download-btn" id="download-card-btn">
+                                        <i class="fas fa-download"></i> Download vCard
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="glass-card terminal">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <span class="btn-close"></span>
+                                <span class="btn-minimize"></span>
+                                <span class="btn-maximize"></span>
+                            </div>                            
+                            <div class="terminal-title">terminal</div>
                         </div>
                         <div class="terminal-body" id="terminal-output">
                             <div class="terminal-line">Welcome! Type 'help' to see available commands.</div>
@@ -199,4 +181,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
