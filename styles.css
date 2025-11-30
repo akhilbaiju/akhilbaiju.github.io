@@ -350,9 +350,9 @@ body {
     gap: 1.5rem;
     align-items: flex-start;
 }
-/* Change size of image here*/
+
 .profile-photo {
-    width: 180px; /* 110px was here for both*/
+    width: 180px; 
     height: 220px;
     border-radius: 1rem;
     object-fit: cover;
@@ -559,7 +559,7 @@ body {
 }
 
 .terminal-command {
-    color: var(--accent); /* Changed from var(--accent); to  #27c93f;  didnt change*/
+    color: #27c93f;
 }
 
 .terminal-input-line {
@@ -571,7 +571,7 @@ body {
 }
 
 .terminal-prompt {
-    color: #27c93f; /* Changed from var(--accent); to  #27c93f;  didnt change*/
+    color: #27c93f;
     font-family: 'Courier New', monospace;
 }
 
@@ -580,7 +580,7 @@ body {
     background: transparent;
     border: none;
     outline: none;
-    color: #27c93f; /* Changed from var(--text-primary); to  #27c93f; */
+    color: #27c93f;
     font-family: 'Courier New', monospace;
     font-size: 0.9rem;
 }
@@ -660,10 +660,10 @@ body {
 }
 
 .visit-card {
-    padding: 0; /* Override glass-card padding */
+    padding: 0;
     text-decoration: none;
     color: var(--text-primary);
-    overflow: hidden; /* Ensure image border-radius works */
+    overflow: hidden;
 }
 
 .visit-card-img {
@@ -789,7 +789,7 @@ body {
     border-radius: 100%;
     object-fit: cover;
     border: 2px solid var(--glass-border);
-    margin-bottom: 0.75rem; /* This is a comment in CSS */
+    margin-bottom: 0.75rem;
 }
 
 .card-name {
