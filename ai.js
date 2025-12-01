@@ -2,8 +2,8 @@
 const aiPrompts = [
     {
         title: "Cyberpunk Cityscape",
-        image: "https://plus.unsplash.com/premium_photo-1681506669115-cb6b2d30dbc7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8dXJsfGVufDB8fDB8fHww",  // Your image path
-        category: "Realistic",  // Choose: Realistic, Cartoon, Cinema, Anime, or Digital Painting
+        image: "PromptImages/VHScapsule.webp",  // Your image path
+        category: "Studio",  // Choose: Realistic, Cartoon, Cinema, Anime, or Digital Painting
         prompt: "A neon-lit cyberpunk city at night, flying cars, holographic advertisements, rain-soaked streets, highly detailed, cinematic lighting, 8k resolution"
     },
     {
@@ -132,5 +132,6 @@ function copyPrompt(prompt, card) {
         console.error('Failed to copy:', err);
     });
 }
+
 
 
