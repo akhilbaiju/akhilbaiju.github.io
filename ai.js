@@ -2,9 +2,9 @@
 const aiPrompts = [
     {
         title: "Cyberpunk Cityscape",
-        image: "PromptImages/VHScapsule.webp",  // Your image path
+        image: "Images/PromptImages/VHScapsule.webp",  // Your image path
         category: "Studio",  // Choose: Realistic, Cartoon, Cinema, Anime, or Digital Painting
-        prompt: "A neon-lit cyberpunk city at night, flying cars, holographic advertisements, rain-soaked streets, highly detailed, cinematic lighting, 8k resolution"
+        prompt: "Using face from reference image imagine A cinematic 90s-inspired underground scene in a graffiti-covered basement. A man/women dressed in authentic 90s clothing — oversized denim jacket, loose graphic T-shirt, baggy ripped jeans, chunky boots, retro chain necklace — sits on a stack of old CRT televisions while holding a baseball bat across his shoulders with a confident rebellious pose. The CRT screens display glitchy MTV-style static and retro color distortion. Neon signs on the wall glow in bright pink and electric blue, showing only the words “MTV” and “VHS”. Around the floor and TVs, add scattered 90s items: VHS tapes, cassette tapes, boombox, floppy disks, old game controllers, CDs, retro headphones, Polaroid photos. Colored neon tubes create dramatic reflections.Moody underground atmosphere, strong contrast, pure retro MTV aesthetic."
     },
     {
         title: "Fantasy Forest",
@@ -132,6 +132,7 @@ function copyPrompt(prompt, card) {
         console.error('Failed to copy:', err);
     });
 }
+
 
 
 
